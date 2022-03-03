@@ -60,17 +60,38 @@ const RecipteTemplate = ({data}) => {
                     <article>
                             <h4>instructions</h4>
                             {
-                                ingredients.map((item,index)=>{
-                                    return <div key={index} className='single-instructions'>
+                                instructions.map((item,index)=>{
+                                    return <div key={index} className='single-instruction'>
                                         <header>
-                                            <p>step {index}</p>
+                                            <p>step {index+1}</p>
+                                            <div></div>
                                         </header>
+                                        <p>{item}</p>
                                     </div>
                                 })
                             }
                     </article>
                     <article className='second-column'>
-                        
+                        <div>
+                            <h4>ingredients</h4>
+                            {
+                                ingredients.map((item,index)=>{
+                                    return(
+                                        <p key={index} className='single-ingredient'>{item}</p>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div>
+                            <h4>tools</h4>
+                            {
+                                tools.map((item,index)=>{
+                                    return(
+                                        <p key={index} className='single-tool'>{item}</p>
+                                    )
+                                })
+                            }
+                        </div>
                     </article>
                 </section>
             </div>
